@@ -1,7 +1,10 @@
 const mainPageMethod = require("../page-object/main_page/mainPage_methods");
 const mainPageElements = require("../page-object/main_page/mainPage_elements");
-const {testData: data} = require("../page-object/main_page/mainPage_constants");
+const {
+  testData: data,
+} = require("../page-object/main_page/mainPage_constants");
 const Logger = require("../components/logger-helper");
+const pageHelper = require('../components/page-helper');
 const suites = require("../components/test-suites");
 const WaitHelper = require("../components/wait-helper");
 
@@ -12,8 +15,9 @@ describe(suites.suiteNames.negativeTest, () => {
     await mainPageMethod.navigateToApplication();
   });
 
-  afterAll(async () => {
+  afterAll(async () => {    
     await WaitHelper.wait(3000);
+    await pageHelper.closeBrowser();
   });
 
   it("Fill out the registration form without completing aptcha verification", async () => {
@@ -35,7 +39,10 @@ describe(suites.suiteNames.negativeTest, () => {
     Logger.verification(
       "The inserted email address should be contained in Email field"
     );
-    await mainPageMethod.verifyValueInField(mainPageElements.elements.email, email);
+    await mainPageMethod.verifyValueInField(
+      mainPageElements.elements.email,
+      email
+    );
 
     Logger.stepNumber(3);
     Logger.step("Typing password");
@@ -56,9 +63,7 @@ describe(suites.suiteNames.negativeTest, () => {
     Logger.stepNumber(5);
     Logger.step("Click on agree the terms and Conditions check");
     await mainPageMethod.clickOnAgreeTerms();
-    Logger.verification(
-        "The terms and Conditions should be accepted"
-      );
+    Logger.verification("The terms and Conditions should be accepted");
     await mainPageMethod.verifyElementIsNotDisplayed(
       mainPageElements.elements.agreeTermsAlert
     );

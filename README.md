@@ -3,9 +3,11 @@
 
 This framework is made up of the following tools:
 ```
-1. NodeJS: The Runtime environment that allows packaging and manage the dependencies.
+1. Node.js: The Runtime environment that allows packaging and manage the dependencies.
 2. Jasmine: The testing framework that provides a BDD and easy-to-read syntax 
 3. Selenium webdriver: Framework used to automate the actions in the browser and locate elements.
+4. Protractor: Jasmine derivatives framework that aids to run test faster and generate report easier. 
+5. Allure: Report generator tool that allows generating HTML report of test results.
 ```
 
 ## Framework Structure
@@ -45,15 +47,17 @@ The relevant framework files are included in the "testing-framework" folder. The
 ```
 
 ## Requirements Installation:
-1. Open terminal console and make sure you are in the root path of the project, and run the command below to install any possible dependencies.
+1. Open terminal console and make sure you are in the root path of the project, and run the command below to install dependencies.
    - npm i
 2. In system environment variables, add this line within the path variable: 
     "{originPath}\Selenium-Jasmine_webSiteForm\testing-framework\web-drivers" 
     - Where "originPath" is the place where the project was downloaded/saved.
-4. The chrome browser version corresponding to the chrome driver installed, it's 93. If you're using different chrome browser version, You can download the corresponding chrome driver from here: https://chromedriver.chromium.org/downloads.
+3. The chrome browser version corresponding to the chrome driver installed, it's 93. If you're using different chrome browser version, You can download the corresponding chrome driver from here: https://chromedriver.chromium.org/downloads.
     Then save this chrome driver inte path mentioned in the previous step.
 
-## Instructions to run the tests:
+## Instructions to run and validate the tests:
 1. Open terminal console and make sure you are in the root paht of the project, then run the tests by executing "npm test" command.
 2. Pay attention while test runs in the browser.
-3. Once test finishes to run, in the console terminal you can see the, you can see the testing workflow, with its corresponding steps, validations and final result.
+3. Once test finishes to run, in the console terminal, you can see the testing workflow, with its corresponding steps, validations and final result.
+4. Wait a few seconds after finishing the test, and a new web browser window will start as a HTML report with the test results.
+5. Then we can save this report in the format that suits us best. As well, at the bottom of the console output, we can see the path where this report was generated, in case we prefer just take it from there.
