@@ -3,7 +3,7 @@ const { attributes: attr } = require('./mainPage_constants');
 const basePage = require('../../components/base-page-helper');
 const By = webdriver.By;
 
-class contact_elements extends basePage {
+class mainPage_elements extends basePage {
     get elements() {
         return {
             get userName() {
@@ -46,4 +46,4 @@ class contact_elements extends basePage {
     }
 }
 
-module.exports = new contact_elements();
+module.exports = new mainPage_elements();

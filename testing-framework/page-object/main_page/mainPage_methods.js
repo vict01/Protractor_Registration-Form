@@ -5,7 +5,7 @@ const Logger = require("../../components/logger-helper");
 const expectationHelper = require("../../components/expectation-helper");
 const webdriver = require("selenium-webdriver");
 
-class contact_methods extends BasePage {
+class mainPage_methods extends BasePage {
   async typeUserName(userNameData) {
     Logger.subStep(`Insert ${userNameData} in "userName" field`);
     await this.sendText(mainPageElements.elements.userName, userNameData);
@@ -64,4 +64,4 @@ class contact_methods extends BasePage {
   }
 }
 
-module.exports = new contact_methods();
+module.exports = new mainPage_methods();

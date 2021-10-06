@@ -1,4 +1,4 @@
-class contact_constants {
+class mainPage_constants {
    
     get attributes() {
         return {
@@ -33,4 +33,4 @@ class contact_constants {
     }
 }
 
-module.exports = new contact_constants();
+module.exports = new mainPage_constants();

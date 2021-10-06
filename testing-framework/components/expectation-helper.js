@@ -36,7 +36,9 @@ class ExpectationHelper {
     await WaitHelper.implicitWait(
       CommonConstant.commonData.implicitWaitDefaultTimeout
     );
-    element.isDisplayed().then(function (isDisplayed) {
+    element
+    .isDisplayed()
+    .then(function (isDisplayed) {
       expect(isDisplayed).toBeTruthy();
     })
     .catch(function(e){
